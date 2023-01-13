@@ -5,6 +5,7 @@
 * 长按f变为连续短按f并且鼠标不断点击最后一个对话选项
 * 可设置开机无感启动
 ## 下载地址
+[Genshin_ahk.exe (885KB)](https://github.com/799034552/my_ahk/releases/download/v1.0/Genshin_ahk.exe)
 ## 脚本内容详情
 按下F直接输入F，如果按下时间超过400毫秒，就判断为长按，在[150,300]ms的随机间隔中短按f，在[150,300]ms的随机间隔中点击对话框
 
