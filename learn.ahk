@@ -191,7 +191,7 @@ $F8::
         MouseClick, left, 914, 739, 1, 5
         Sleep 300
     }
-    Sleep, 2000
+    Sleep, 1000
     ;派遣
     Send, {f Down}
     Sleep, 200
