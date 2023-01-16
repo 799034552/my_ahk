@@ -3,6 +3,9 @@
 ## 脚本功能
 > 现在只适用与1920*1080分辨率
 * 长按f变为连续短按f并且鼠标不断点击最后一个对话选项
+* f8在蒙德传送点接收每日委托奖励与派遣
+* ctrl+9强化圣遗物（使用四星）跳过动画
+* ctrl+7关闭脚本
 * 可设置开机无感启动
 ## 下载地址
 [Genshin_ahk.exe (885KB)](https://github.com/799034552/my_ahk/releases/download/v1.0/Genshin_ahk.exe)

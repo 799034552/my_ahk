@@ -118,7 +118,150 @@ $F::
             sleep 20
         }
     }
+    return
 }
+$^7::
+{
+    ExitApp
+    return
+}
+
+$F8::
+{
+    ; WinActivate, 原神 ahk_class UnityWndClass
+    ; 运动到任务点
+    Send, {2 Down}
+    Sleep, 140
+    Send, {2 Up}
+    Sleep, 360
+    Send, {w Down}
+    Sleep, 93
+    Send, {LShift Down}
+    Sleep, 1422
+    Send, {Space Down}
+    Sleep, 172
+    Send, {Space Up}
+    Sleep, 500
+    Send, {LShift Up}
+    Sleep, 172
+    Send, {LShift Down}
+    Sleep, 578
+    Send, {LShift Up}
+    Sleep, 313
+    Send, {LShift Down}
+    Sleep, 1156
+    Send, {LShift Up}
+    Sleep, 547
+    Send, {LShift Down}
+    Sleep, 500
+    Send, {A Down}
+    Sleep, 515
+    Send, {A Up}
+    Sleep, 94
+    Send, {LShift Up}
+    Sleep, 172
+    Send, {LShift Down}
+    Sleep, 1125
+    Send, {LShift Up}
+    Sleep, 266
+    Send, {LShift Down}
+    Sleep, 484
+    Send, {LShift Up}
+    Sleep, 312
+    Send, {w Up}
+    Sleep, 157
+    Send, {w Down}
+    Sleep, 328
+    Send, {w Up}
+    Sleep, 109
+    Send, {f Down}
+    Sleep, 78
+    Send, {f Up}
+
+    ;领取委托
+    Send, {f Down}
+    Sleep, 200
+    Loop 5{
+        send {f}
+        Sleep 300
+    }
+    MouseClick, left, 1351, 495, 1, 5
+    Sleep, 500
+    Loop 5{
+        MouseClick, left, 914, 739, 1, 5
+        Sleep 300
+    }
+    Sleep, 2000
+    ;派遣
+    Send, {f Down}
+    Sleep, 200
+    Loop 5{
+        send {f}
+        Sleep 300
+    }
+    MouseClick, left, 1341, 669, 1, 5 ;派遣
+    Sleep, 200
+    MouseClick, left, 138, 160, 1, 5 ;蒙德
+    Sleep, 200
+    MouseClick, left, 1051, 335, 1, 5 ;一号+
+    Sleep, 200
+    MouseClick, left, 1649, 1025, 1, 5 ;确定
+    Sleep, 500
+    MouseClick, left, 1219, 901, 1, 5 ; 空白
+    Sleep, 200
+    MouseClick, left, 1649, 1025, 1, 5 ;确定
+    Sleep, 200
+    MouseClick, left, 479, 141, 1, 5 ; 一号人物
+    Sleep, 200
+
+    MouseClick, left, 1109, 457, 1, 5 ;一号+
+    Sleep, 200
+    MouseClick, left, 1649, 1025, 1, 5 ;确定
+    Sleep, 200
+    MouseClick, left, 1219, 901, 1, 5 ; 空白
+    Sleep, 200
+    MouseClick, left, 1649, 1025, 1, 5 ;确定
+    Sleep, 500
+    MouseClick, left, 534, 273, 1, 5 ; 一号人物
+    Sleep, 200
+
+    MouseClick, left, 1161, 659, 1, 5 ;一号+
+    Sleep, 200
+    MouseClick, left, 1649, 1025, 1, 5 ;确定
+    Sleep, 500
+    MouseClick, left, 1219, 901, 1, 5 ; 空白
+    Sleep, 200
+    MouseClick, left, 1649, 1025, 1, 5 ;确定
+    Sleep, 200
+    MouseClick, left, 563, 375, 1, 5 ; 一号人物
+    Sleep, 200
+
+    send {ESC}
+    Sleep, 200
+    send {ESC}
+    Sleep, 1800
+    send {ALT DOWN}
+    Sleep, 100
+    MouseClick, left, 1482, 47, 1, 5
+    Sleep, 500
+    send {ALT UP}
+    MouseClick, left, 965, 55, 1, 5
+    Sleep, 500
+    MouseClick, left, 1711, 977, 1, 5
+    return
+}
+$^9::
+{
+    MouseClick, left, 1714, 768, 1, 2
+    Sleep, 200
+    MouseClick, left, 1696, 1023, 1, 2
+    Sleep, 200
+    MouseClick, left, 147, 159, 1, 2
+    Sleep, 200
+    MouseClick, left, 133, 222, 1, 2
+    Sleep, 200
+}
+
 
 RunAsTask() {                         ;  By SKAN,  http://goo.gl/yG6A1F,  CD:19/Aug/2014 | MD:24/Apr/2020
 
