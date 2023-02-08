@@ -58,13 +58,15 @@ Menu_exit_Handler:
 ExitApp
 return
 
-$F::
+#IfWinActive ahk_exe YuanShen.exe
+
+~$F::
 {
-    if (GetKeyState("CapsLock", "T") == 0) {
-        send f
-    } else {
-        send F
-    }
+    ; if (GetKeyState("CapsLock", "T") == 0) {
+    ;     send f
+    ; } else {
+    ;     send F
+    ; }
     Loop
     {
         state:=GetKeyState("F","P")
