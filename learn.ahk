@@ -58,8 +58,8 @@ Menu_exit_Handler:
 ExitApp
 return
 
-#IfWinActive ahk_exe YuanShen.exe
 
+#IfWinActive ahk_exe YuanShen.exe
 ~$F::
 {
     ; if (GetKeyState("CapsLock", "T") == 0) {
@@ -251,7 +251,7 @@ $F3::
     MouseClick, left, 1051, 335, 1, 5 ;一号+
     Sleep, 50
     MouseClick, left, 1649, 1025, 1, 5 ;确定
-    Sleep, 500
+    Sleep, 100
     MouseClick, left, 1219, 901, 1, 5 ; 空白
     Sleep, 50
     MouseClick, left, 1649, 1025, 1, 5 ;确定
@@ -262,7 +262,7 @@ $F3::
     MouseClick, left, 1109, 457, 1, 5 ;一号+
     Sleep, 50
     MouseClick, left, 1649, 1025, 1, 5 ;确定
-    Sleep, 500
+    Sleep, 100
     MouseClick, left, 1219, 901, 1, 5 ; 空白
     Sleep, 50
     MouseClick, left, 1649, 1025, 1, 5 ;确定
@@ -273,7 +273,7 @@ $F3::
     MouseClick, left, 1161, 659, 1, 5 ;一号+
     Sleep, 50
     MouseClick, left, 1649, 1025, 1, 5 ;确定
-    Sleep, 500
+    Sleep, 100
     MouseClick, left, 1219, 901, 1, 5 ; 空白
     Sleep, 50
     MouseClick, left, 1649, 1025, 1, 5 ;确定
