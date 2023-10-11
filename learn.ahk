@@ -62,11 +62,6 @@ return
 #IfWinActive ahk_exe YuanShen.exe
 ~$F::
 {
-    ; if (GetKeyState("CapsLock", "T") == 0) {
-    ;     send f
-    ; } else {
-    ;     send F
-    ; }
     Loop
     {
         state:=GetKeyState("F","P")
@@ -103,13 +98,13 @@ return
                 N -= 1
                 if (N <= 0) {
                     send f
-                    Random, tmp,150, 250
+                    Random, tmp,100, 150
                     N := Ceil(%tmp% / 20)
                 }
                 click_n -= 1
                 if (click_n <= 0) {
                     MouseClick, left, %x%, %y%, 1,5
-                    Random, tmp,150, 250
+                    Random, tmp,100, 150
                     click_n := Ceil(%tmp% / 20)
                 }
             }
@@ -126,6 +121,53 @@ $^7::
 {
     Reload
     return
+}
+
+$RButton::
+{
+    Loop
+        {
+            state:=GetKeyState("RButton","P")
+            if(state == 0) ;F按键松开
+            {
+                return
+            }
+            if(A_TimeSinceThisHotkey > 200) ;F按键时长大于400毫秒
+            {
+                break
+            }
+            sleep, 20
+        }
+        if(state == 0) ;短按
+        {         
+            ; if (GetKeyState("CapsLock", "T") == 0) {
+            ;     send f
+            ; } else {
+            ;     send F
+            ; }
+        }
+        else ;长按
+        {
+           
+            Loop 
+            {
+                state:=GetKeyState("RButton","P")
+                if (state == 1)
+                {
+                    Click down
+                    x := 1000
+                    y := 0
+                    DllCall("mouse_event", uint, 1, int, x, int, y, uint, 0, int, 0)
+                }
+                else
+                {
+                    Click up
+                    break
+                }
+                sleep 5
+            }
+        }
+        return
 }
 $F4::
 {
@@ -149,13 +191,13 @@ $F4::
         N -= 1
         if (N <= 0) {
             send f
-            Random, tmp,150, 300
+            Random, tmp,100, 150
             N := Ceil(%tmp% / 20)
         }
         click_n -= 1
         if (click_n <= 0) {
             MouseClick, left, %x%, %y%, 1, 5
-            Random, tmp,150, 300
+            Random, tmp,100, 150
             click_n := Ceil(%tmp% / 20)
         }
         sleep 20
@@ -163,138 +205,7 @@ $F4::
     return
 }
 
-$F3::
-{
-    ; WinActivate, 原神 ahk_class UnityWndClass
-    ; 运动到任务点
-    ; Send, {2 Down}
-    ; Sleep, 140
-    ; Send, {2 Up}
-    ; Sleep, 360
-    ; Send, {2 Down}
-    ; Sleep, 140
-    ; Send, {2 Up}
-    ; Sleep, 360
-    ; Send, {w Down}
-    ; Sleep, 93
-    ; Send, {LShift Down}
-    ; Sleep, 1422
-    ; Send, {Space Down}
-    ; Sleep, 172
-    ; Send, {Space Up}
-    ; Sleep, 500
-    ; Send, {LShift Up}
-    ; Sleep, 172
-    ; Send, {LShift Down}
-    ; Sleep, 578
-    ; Send, {LShift Up}
-    ; Sleep, 313
-    ; Send, {LShift Down}
-    ; Sleep, 1156
-    ; Send, {LShift Up}
-    ; Sleep, 547
-    ; Send, {LShift Down}
-    ; Sleep, 500
-    ; Send, {A Down}
-    ; Sleep, 515
-    ; Send, {A Up}
-    ; Sleep, 94
-    ; Send, {LShift Up}
-    ; Sleep, 172
-    ; Send, {LShift Down}
-    ; Sleep, 1125
-    ; Send, {LShift Up}
-    ; Sleep, 266
-    ; Send, {LShift Down}
-    ; Sleep, 484
-    ; Send, {LShift Up}
-    ; Sleep, 312
-    ; Send, {w Up}
-    ; Sleep, 157
-    ; Send, {w Down}
-    ; Sleep, 328
-    ; Send, {w Up}
-    ; Sleep, 109
-    ; Send, {f Down}
-    ; Sleep, 78
-    ; Send, {f Up}
 
-    ;领取委托
-    ; Send, {f Down}
-    ; Sleep, 200
-    Loop {
-        PixelGetColor, color, 1298, 653
-        if (color == "0xFFFFFF") {
-            break
-        }
-        send {f}
-        Sleep 200
-    }
-    MouseClick, left, 1351, 495, 1, 5
-    Sleep, 500
-    Loop 5{
-        MouseClick, left, 914, 739, 1, 5
-        Sleep 300
-    }
-    Sleep, 500
-    ;派遣
-    Send, {f Down}
-    Sleep, 200
-    Loop 5{
-        send {f}
-        Sleep 300
-    }
-    MouseClick, left, 1341, 669, 1, 5 ;派遣
-    Sleep, 200
-    MouseClick, left, 138, 160, 1, 5 ;蒙德
-    Sleep, 50
-    MouseClick, left, 1051, 335, 1, 5 ;一号+
-    Sleep, 50
-    MouseClick, left, 1649, 1025, 1, 5 ;确定
-    Sleep, 100
-    MouseClick, left, 1219, 901, 1, 5 ; 空白
-    Sleep, 50
-    MouseClick, left, 1649, 1025, 1, 5 ;确定
-    Sleep, 50
-    MouseClick, left, 479, 141, 1, 5 ; 一号人物
-    Sleep, 50
-
-    MouseClick, left, 1109, 457, 1, 5 ;一号+
-    Sleep, 50
-    MouseClick, left, 1649, 1025, 1, 5 ;确定
-    Sleep, 100
-    MouseClick, left, 1219, 901, 1, 5 ; 空白
-    Sleep, 50
-    MouseClick, left, 1649, 1025, 1, 5 ;确定
-    Sleep, 200
-    MouseClick, left, 534, 273, 1, 5 ; 一号人物
-    Sleep, 50
-
-    MouseClick, left, 1161, 659, 1, 5 ;一号+
-    Sleep, 50
-    MouseClick, left, 1649, 1025, 1, 5 ;确定
-    Sleep, 100
-    MouseClick, left, 1219, 901, 1, 5 ; 空白
-    Sleep, 50
-    MouseClick, left, 1649, 1025, 1, 5 ;确定
-    Sleep, 50
-    MouseClick, left, 563, 375, 1, 5 ; 一号人物
-    Sleep, 50
-
-    send {ESC}
-    Sleep, 200
-    send {ESC}
-    Sleep, 1800
-    send {ALT DOWN}
-    Sleep, 100
-    MouseClick, left, 1482, 47, 1, 5
-    Sleep, 500
-    send {ALT UP}
-    MouseClick, left, 965, 55, 1, 5
-    Sleep, 200
-    MouseClick, left, 1711, 977, 1, 5
-    return
-}
 $^9::
 {
     MouseClick, left, 1714, 768, 1, 2
